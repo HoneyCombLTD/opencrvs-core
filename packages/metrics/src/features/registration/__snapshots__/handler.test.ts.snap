@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When an existing declaration is marked certified a birth declaration writes the declaration_event_duration to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "1744fc19-95be-434b-8bc9-a76d6b81551b",
+    "currentTaskId": "dcf1644e-362d-414f-b0cc-2b240eea8591",
+    "durationInSeconds": 94381,
+    "previousTaskId": "e172627c-8490-44da-a702-80a082f978f5",
+  },
+  "measurement": "declaration_event_duration",
+  "tags": Object {
+    "currentStatus": "CERTIFIED",
+    "eventType": "BIRTH",
+    "previousStatus": "REGISTERED",
+  },
+  "timestamp": 1570613507666000000,
+}
+`;
+
+exports[`When an existing declaration is marked certified a death declaration writes the delta between REGISTERED and CERTIFIED states to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "62168b7e-7f80-4e2a-a7b0-1d33759c9d71",
+    "currentTaskId": "75ba4bd8-009e-4a02-896c-148979dde09a",
+    "durationInSeconds": 3564388,
+    "previousTaskId": "e172627c-8490-44da-a702-80a082f978f5",
+  },
+  "measurement": "declaration_event_duration",
+  "tags": Object {
+    "currentStatus": "CERTIFIED",
+    "eventType": "DEATH",
+    "previousStatus": "REGISTERED",
+  },
+  "timestamp": 1574083515546000000,
+}
+`;
+
+exports[`When an existing declaration is marked certified writes the delta between REGISTERED and CERTIFIED states to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "1744fc19-95be-434b-8bc9-a76d6b81551b",
+    "currentTaskId": "dcf1644e-362d-414f-b0cc-2b240eea8591",
+    "durationInSeconds": 94381,
+    "previousTaskId": "e172627c-8490-44da-a702-80a082f978f5",
+  },
+  "measurement": "declaration_event_duration",
+  "tags": Object {
+    "currentStatus": "CERTIFIED",
+    "eventType": "BIRTH",
+    "previousStatus": "REGISTERED",
+  },
+  "timestamp": 1570613507666000000,
+}
+`;
+
+exports[`When an existing declaration is marked registered a death declaration writes the delta between REGISTERED and CERTIFIED states to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "62168b7e-7f80-4e2a-a7b0-1d33759c9d71",
+    "currentTaskId": "75ba4bd8-009e-4a02-896c-148979dde09a",
+    "durationInSeconds": 3727875,
+    "previousTaskId": "e172627c-8490-44da-a702-80a082f978f5",
+  },
+  "measurement": "declaration_event_duration",
+  "tags": Object {
+    "currentStatus": "REGISTERED",
+    "eventType": "DEATH",
+    "previousStatus": "DECLARED",
+  },
+  "timestamp": 1574074172990000000,
+}
+`;
+
+exports[`When an existing declaration is marked registered writes the delta between DECLARED and REGISTERED states to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "80433e78-7042-4837-b888-a79c0181bf4e",
+    "currentTaskId": "18ea2464-f843-45e2-93b1-8b026e0d93a4",
+    "durationInSeconds": 170630,
+    "previousTaskId": "e172627c-8490-44da-a702-80a082f978f5",
+  },
+  "measurement": "declaration_event_duration",
+  "tags": Object {
+    "currentStatus": "REGISTERED",
+    "eventType": "BIRTH",
+    "previousStatus": "DECLARED",
+  },
+  "timestamp": 1570516927666000000,
+}
+`;
+
+exports[`When an existing declaration is marked registered writes the delta between DECLARED and VALIDATED states to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "80433e78-7042-4837-b888-a79c0181bf4e",
+    "currentTaskId": "18ea2464-f843-45e2-93b1-8b026e0d93a4",
+    "durationInSeconds": 170630,
+    "previousTaskId": "e172627c-8490-44da-a702-80a082f978f5",
+  },
+  "measurement": "declaration_event_duration",
+  "tags": Object {
+    "currentStatus": "VALIDATED",
+    "eventType": "BIRTH",
+    "previousStatus": "DECLARED",
+  },
+  "timestamp": 1570516927666000000,
+}
+`;
+
+exports[`When an existing declaration is marked registered writes the delta between VALIDATED and REGISTERED states to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "80433e78-7042-4837-b888-a79c0181bf4e",
+    "currentTaskId": "18ea2464-f843-45e2-93b1-8b026e0d93a4",
+    "durationInSeconds": 170630,
+    "previousTaskId": "e172627c-8490-44da-a702-80a082f978f5",
+  },
+  "measurement": "declaration_event_duration",
+  "tags": Object {
+    "currentStatus": "REGISTERED",
+    "eventType": "BIRTH",
+    "previousStatus": "VALIDATED",
+  },
+  "timestamp": 1570516927666000000,
+}
+`;
+
+exports[`When an existing declaration is marked registered writes the delta between VALIDATED and WAITING_VALIDATION states to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "80433e78-7042-4837-b888-a79c0181bf4e",
+    "currentTaskId": "18ea2464-f843-45e2-93b1-8b026e0d93a4",
+    "durationInSeconds": 170630,
+    "previousTaskId": "e172627c-8490-44da-a702-80a082f978f5",
+  },
+  "measurement": "declaration_event_duration",
+  "tags": Object {
+    "currentStatus": "WAITING_VALIDATION",
+    "eventType": "BIRTH",
+    "previousStatus": "VALIDATED",
+  },
+  "timestamp": 1570516927666000000,
+}
+`;
+
+exports[`When an existing declaration requested correction a birth declaration writes the payment total to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "c41a95b6-4439-4fc7-9d56-6d3a8ea0f80b",
+    "total": undefined,
+  },
+  "measurement": "payment",
+  "tags": Object {
+    "eventType": "BIRTH",
+    "locationLevel5": "Location/976c4871-c4d1-46f7-b50b-09f346e05d55",
+    "officeLocation": "Location/fe68d322-4d98-4cdf-a320-2db9653f781d",
+    "paymentType": "correction",
+  },
+  "timestamp": undefined,
+}
+`;
+
+exports[`When an existing declaration requested correction a death declaration writes the delta between REGISTERED and REQUESTED_FOR_CORRECTION states to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "35acb304-ec54-46cb-b37f-831d970cb40d",
+    "currentTaskId": "2be5b7ad-34d7-4f6e-a91f-604f8baa4e9b",
+    "durationInSeconds": 73271619,
+    "previousTaskId": "e172627c-8490-44da-a702-80a082f978f5",
+  },
+  "measurement": "declaration_event_duration",
+  "tags": Object {
+    "currentStatus": "REQUESTED_CORRECTION",
+    "eventType": "DEATH",
+    "previousStatus": "REGISTERED",
+  },
+  "timestamp": 1643790745825000000,
+}
+`;
+
+exports[`When an existing declaration requested correction writes the delta between REGISTERED and REQUESTED_FOR_CORRECTION states to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "c41a95b6-4439-4fc7-9d56-6d3a8ea0f80b",
+    "currentTaskId": "15d78710-8809-4a23-81db-45f917c15ac4",
+    "durationInSeconds": 73186871,
+    "previousTaskId": "e172627c-8490-44da-a702-80a082f978f5",
+  },
+  "measurement": "declaration_event_duration",
+  "tags": Object {
+    "currentStatus": "REQUESTED_CORRECTION",
+    "eventType": "BIRTH",
+    "previousStatus": "REGISTERED",
+  },
+  "timestamp": 1643705998544000000,
+}
+`;
+
+exports[`When an in-progress declaration is received writes the in complete field points to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "b2fbb82c-a68d-4793-98e1-87484fc785c4",
+  },
+  "measurement": "in_complete_fields",
+  "tags": Object {
+    "eventType": "BIRTH",
+    "locationLevel5": "Location/308c35b4-04f8-4664-83f5-9790e790cde1",
+    "missingFieldGroupId": "child-view-group",
+    "missingFieldId": "placeOfBirth",
+    "missingFieldSectionId": "child",
+    "regStatus": "IN_PROGRESS",
+  },
+  "timestamp": 1551785895844000000,
+}
+`;
+
+exports[`When an in-progress declaration is received writes the rejected points to influxdb 1`] = `
+Object {
+  "fields": Object {
+    "compositionId": "81278acf-6105-435e-b1c2-91619c8cf6e1",
+  },
+  "measurement": "declarations_rejected",
+  "tags": Object {
+    "eventType": "BIRTH",
+    "locationLevel5": "Location/acb24f46-83ec-45c3-b00f-5ded939ecfd8",
+    "officeLocation": "Location/2a520dc1-0a9a-48a1-a4b8-66f3075a9155",
+    "startedBy": "4bb03541-116e-4ce2-8ea4-407f307f7579",
+  },
+  "timestamp": 1589199329739000000,
+}
+`;
