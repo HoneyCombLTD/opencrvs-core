@@ -33,15 +33,20 @@ echo -e "\033[32m::::::::::::::: Cloning the Country Configuration :::::::::::::
 echo
 
 cd ../
-git clone https://github.com/opencrvs/opencrvs-countryconfig.git
+git clone https://github.com/HoneyCombLTD/opencrvs-countryconfig.git
 
 cd opencrvs-countryconfig
+
+cp src/data-seeding/employees/source/default-employees.csv src/data-seeding/employees/source/test-employees.csv
+
 if [[ $CI == "true" ]]; then
   git checkout develop
 else
   git checkout master
 fi
 
+sed -i "s/localhost/192.168.0.50/g" src/login-config.js
+sed -i "s=localhost=192.168.0.50=g" src/client-config.js
 
 echo
 echo -e "\033[32m:::::::::::::::::: Installing some Node dependencies ::::::::::::::::::\033[0m"

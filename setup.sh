@@ -9,6 +9,13 @@
 set -e
 
 export LANGUAGES='en'
+export CONFIG_API_URL='http://192.168.0.50:2021'
+export LOGIN_URL='http://192.168.0.50:3020'
+export API_GATEWAY_URL='http://192.168.0.50:7070/'
+export APPLICATION_CONFIG_URL='http://localhost:2021/'
+export COUNTRY_CONFIG_URL='http://192.168.0.50:3040'
+export AUTH_URL='http://192.168.0.50:4040'
+
 do_version_check() {
 
    if [ "$1" == "$2" ] ; then
@@ -83,7 +90,9 @@ function ask_yes_or_no() {
         *)     echo "no" ;;
     esac
 }
-if [[ "no" == $(ask_yes_or_no "OpenCRVS can ONLY run on Ubuntu or Mac OSX.  This is a ONE TIME USE ONLY setup command for OpenCRVS and resets OpenCRVS to factory settings.  If you have already successfully installed OpenCRVS, you should use 'yarn dev' to start OpenCRVS again.  Type: no to exit.  If you want to continue, your OS must be Ubuntu or Mac and you must have at least 30 minutes available as the process cannot be interrupted.  You must also have at least 20GB of available disk space and at least 16GB of RAM.  Type: yes to continue.") ]]
+if [[ "no" == $(ask_yes_or_no "OpenCRVS can ONLY run on Ubuntu or Mac OSX.  This is a ONE TIME USE ONLY setup command for OpenCRVS and resets OpenCRVS to factory settings.  If you have already successfully insta
+lled OpenCRVS, you should use 'yarn dev' to start OpenCRVS again.  Type: no to exit.  If you want to continue, your OS must be Ubuntu or Mac and you must have at least 30 minutes available as the process cannot 
+be interrupted.  You must also have at least 20GB of available disk space and at least 16GB of RAM.  Type: yes to continue.") ]]
 then
     echo "Exiting OpenCRVS setup."
     exit 0
@@ -95,13 +104,15 @@ echo
 echo "We will check your dependencies, build docker images, load and configure OpenCRVS. It takes a long time so please be patient and do not quit this process."
 echo
 sleep_if_non_ci 5
-echo "If we recognise that you have not installed a dependency correctly, we will display links to instructions you can follow on 3rd party websites. The links worked at the time of writing but may change. Please let us know on GitHub discussions if you encounter any broken links."
+echo "If we recognise that you have not installed a dependency correctly, we will display links to instructions you can follow on 3rd party websites. The links worked at the time of writing but may change. Pleas
+e let us know on GitHub discussions if you encounter any broken links."
 sleep_if_non_ci 5
 echo
 echo "Installing Docker and Node for example, is outside the scope of this script."
 sleep_if_non_ci 10
 echo
-echo "As part of this script, we checkout another GIT repo: A country configuration module into the folder next to this one called: 'opencrvs-countryconfig'. We do this to make it easy for you to try OpenCRVS.  If you are developing your own country configuration, you should follow our forking instructions at https://documentation.opencrvs.org."
+echo "As part of this script, we checkout another GIT repo: A country configuration module into the folder next to this one called: 'opencrvs-countryconfig'. We do this to make it easy for you to try OpenCRVS.  
+If you are developing your own country configuration, you should follow our forking instructions at https://documentation.opencrvs.org."
 [ -d "../opencrvs-countryconfig" ] && echo "Enter your password to delete the existing country configuration to reset OpenCRVS to factory settings." && sudo rm -r ../opencrvs-countryconfig
 
 sleep_if_non_ci 10
