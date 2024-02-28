@@ -19,7 +19,7 @@ export const FHIR_URL = process.env.FHIR_URL || 'http://localhost:5001/fhir'
 export const HEARTH_URL = process.env.HEARTH_URL || 'http://localhost:3447/fhir'
 export const CERT_PUBLIC_KEY_PATH =
   (process.env.CERT_PUBLIC_KEY_PATH as string) ||
-  '../.secrets/public-key.pem'
+  '../../.secrets/public-key.pem'
 // Services
 export const SEARCH_URL = process.env.SEARCH_URL || 'http://localhost:9090/'
 export const METRICS_URL = process.env.METRICS_URL || 'http://localhost:1050'

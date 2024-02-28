@@ -25,10 +25,10 @@ export const CLIENT_APP_URL =
 
 export const CERT_PRIVATE_KEY_PATH =
   (process.env.CERT_PRIVATE_KEY_PATH as string) ||
-  '../.secrets/private-key.pem'
+  '../../.secrets/private-key.pem'
 export const CERT_PUBLIC_KEY_PATH =
   (process.env.CERT_PUBLIC_KEY_PATH as string) ||
-  '../.secrets/public-key.pem'
+  '../../.secrets/public-key.pem'
 export const SENTRY_DSN = process.env.SENTRY_DSN
 
 export const PRODUCTION = process.env.NODE_ENV === 'production'

@@ -24,7 +24,7 @@ export const COUNTRY_CONFIG_URL =
   process.env.COUNTRY_CONFIG_URL || `http://localhost:3040/`
 export const CERT_PUBLIC_KEY_PATH =
   (process.env.CERT_PUBLIC_KEY_PATH as string) ||
-  '../.secrets/public-key.pem'
+  '../../.secrets/public-key.pem'
 
 export const USER_MANAGEMENT_URL =
   process.env.USER_MANAGEMENT_URL || 'http://localhost:3030/'
