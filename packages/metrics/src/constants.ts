@@ -15,7 +15,7 @@ export const PORT = process.env.METRICS_PORT || 1050
 export const fhirUrl = process.env.FHIR_URL || 'http://localhost:5001/fhir/'
 export const CERT_PUBLIC_KEY_PATH =
   (process.env.CERT_PUBLIC_KEY_PATH as string) ||
-  '../../.secrets/public-key.pem'
+  '../.secrets/public-key.pem'
 export const COUNTRY_CONFIG_URL =
   process.env.COUNTRY_CONFIG_URL || 'http://localhost:3040'
 export const USER_MANAGEMENT_URL =
