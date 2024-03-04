@@ -15,6 +15,8 @@ services:
       context: .
       dockerfile: ./packages/client/Dockerfile
     restart: unless-stopped
+    ports:
+      - '3000:3000'
 
   dashboards:
     image: opencrvs/ocrvs-dashboards:${VERSION:-latest}
@@ -35,6 +37,8 @@ services:
       context: .
       dockerfile: ./packages/login/Dockerfile
     restart: unless-stopped
+    ports:
+      - '3020:3020'
   gateway:
     image: opencrvs/ocrvs-gateway:${VERSION:-latest}
     build:
@@ -76,6 +80,8 @@ services:
       - OPENHIM_URL=http://openhim-core:5001
       - APPLICATION_CONFIG_URL=http://config:2021/
       - COUNTRY=${COUNTRY:-bgd} # PEN_TEST change to gbr
+    ports:
+      - '5050:5050'
   search:
     image: opencrvs/ocrvs-search:${VERSION:-latest}
     build:
@@ -87,6 +93,8 @@ services:
       - USER_MANAGEMENT_URL=http://user-mgnt:3030/
       - ES_HOST=elasticsearch:9200
       - HEARTH_URL=http://hearth:3447/fhir
+    ports:
+      - '9090:9090'
   metrics:
     image: opencrvs/ocrvs-metrics:${VERSION:-latest}
     build:
@@ -106,6 +114,8 @@ services:
       - SEARCH_URL=http://search:9090/
       - USER_MANAGEMENT_URL=http://user-mgnt:3030
       - DOCUMENTS_URL=http://documents:9050
+    ports:
+      - '1050:1050'
   # END User facing services
   scheduler:
     image: opencrvs/ocrvs-scheduler:${VERSION:-latest}
@@ -129,6 +139,8 @@ services:
       - CONFIG_SMS_CODE_EXPIRY_SECONDS=600
       - NOTIFICATION_SERVICE_URL=http://notification:2020/
       - METRICS_URL=http://metrics:1050
+    ports:
+      - '4040:4040'
   user-mgnt:
     image: opencrvs/ocrvs-user-mgnt:${VERSION:-latest}
     build:
@@ -141,6 +153,8 @@ services:
       - FHIR_URL=http://openhim-core:5001/fhir
       - HOST=0.0.0.0
       - METRICS_URL=http://metrics:1050
+    ports:
+      - '3030:3030'
   webhooks:
     image: opencrvs/ocrvs-webhooks:${VERSION:-latest}
     build:
@@ -155,6 +169,8 @@ services:
       - FHIR_URL=http://openhim-core:5001/fhir
       - HOST=0.0.0.0
       - CHECK_INVALID_TOKEN=true
+    ports:
+      - '2525:2525'
   notification:
     image: opencrvs/ocrvs-notification:${VERSION:-latest}
     build:
@@ -165,6 +181,8 @@ services:
       - COUNTRY=${COUNTRY:-bgd}
       - HOST=0.0.0.0
       - COUNTRY_CONFIG_URL=http://countryconfig:3040
+    ports:
+      - '2020:2020'
   config:
     image: opencrvs/ocrvs-config:${VERSION:-latest}
     build:
@@ -184,6 +202,8 @@ services:
       - GATEWAY_URL=http://gateway:7070/
       - DOCUMENTS_URL=http://documents:9050
       - CHECK_INVALID_TOKEN=true
+    ports:
+      - '2021:2021'
   migration:
     image: opencrvs/ocrvs-migration:${VERSION:-latest}
     build:
@@ -210,3 +230,5 @@ services:
     environment:
       - NODE_ENV=development
       - COUNTRY_CONFIG_URL=http://countryconfig:3040
+    ports:
+      - '9050:9050'
