@@ -9,12 +9,12 @@
 set -e
 
 export LANGUAGES='en'
-export CONFIG_API_URL='http://192.168.0.50:2021'
-export LOGIN_URL='http://192.168.0.50:3020'
-export API_GATEWAY_URL='http://192.168.0.50:7070/'
-export APPLICATION_CONFIG_URL='http://localhost:2021/'
-export COUNTRY_CONFIG_URL='http://192.168.0.50:3040'
-export AUTH_URL='http://192.168.0.50:4040'
+# export CONFIG_API_URL='http://192.168.0.50:2021'
+# export LOGIN_URL='http://192.168.0.50:3020'
+# export API_GATEWAY_URL='http://192.168.0.50:7070/'
+# export APPLICATION_CONFIG_URL='http://localhost:2021/'
+# export COUNTRY_CONFIG_URL='http://192.168.0.50:3040'
+# export AUTH_URL='http://192.168.0.50:4040'
 
 do_version_check() {
 
@@ -113,7 +113,7 @@ sleep_if_non_ci 10
 echo
 echo "As part of this script, we checkout another GIT repo: A country configuration module into the folder next to this one called: 'opencrvs-countryconfig'. We do this to make it easy for you to try OpenCRVS.  
 If you are developing your own country configuration, you should follow our forking instructions at https://documentation.opencrvs.org."
-[ -d "../opencrvs-countryconfig" ] && echo "Enter your password to delete the existing country configuration to reset OpenCRVS to factory settings." && sudo rm -r ../opencrvs-countryconfig
+[ -d "../opencrvs-countryconfig" ] && echo "Enter your password to delete the existing country configuration to reset OpenCRVS to factory settings." #&& sudo rm -r ../opencrvs-countryconfig
 
 sleep_if_non_ci 10
 echo

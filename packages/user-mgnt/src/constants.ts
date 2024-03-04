@@ -14,9 +14,8 @@ export const MONGO_URL =
   process.env.MONGO_URL || 'mongodb://localhost/user-mgnt'
 export const NOTIFICATION_SERVICE_URL =
   process.env.NOTIFICATION_SERVICE_URL || 'http://localhost:2020/'
-export const CERT_PUBLIC_KEY_PATH =
-  (process.env.CERT_PUBLIC_KEY_PATH as string) ||
-  '../../.secrets/public-key.pem'
+export const CERT_PUBLIC_KEY_PATH = process.cwd() + '/.secrets/public-key.pem' ||
+  '/.secrets/public-key.pem'
 export const SENTRY_DSN = process.env.SENTRY_DSN
 export const QA_ENV = process.env.QA_ENV || false
 export const RECORD_SEARCH_QUOTA =

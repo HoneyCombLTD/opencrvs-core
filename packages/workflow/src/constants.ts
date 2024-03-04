@@ -22,10 +22,8 @@ export const MOSIP_TOKEN_SEEDER_URL =
   process.env.MOSIP_TOKEN_SEEDER_URL || 'http://localhost:8085'
 export const COUNTRY_CONFIG_URL =
   process.env.COUNTRY_CONFIG_URL || `http://localhost:3040/`
-export const CERT_PUBLIC_KEY_PATH =
-  (process.env.CERT_PUBLIC_KEY_PATH as string) ||
-  '../../.secrets/public-key.pem'
-
+export const CERT_PUBLIC_KEY_PATH = process.cwd() + '/.secrets/public-key.pem' ||
+  '/.secrets/public-key.pem'
 export const USER_MANAGEMENT_URL =
   process.env.USER_MANAGEMENT_URL || 'http://localhost:3030/'
 export const SENTRY_DSN = process.env.SENTRY_DSN

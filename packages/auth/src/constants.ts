@@ -23,12 +23,10 @@ export const LOGIN_URL = process.env.LOGIN_URL || 'http://localhost:3020/'
 export const CLIENT_APP_URL =
   process.env.CLIENT_APP_URL || 'http://localhost:3000/'
 
-export const CERT_PRIVATE_KEY_PATH =
-  (process.env.CERT_PRIVATE_KEY_PATH as string) ||
-  '../../.secrets/private-key.pem'
-export const CERT_PUBLIC_KEY_PATH =
-  (process.env.CERT_PUBLIC_KEY_PATH as string) ||
-  '../../.secrets/public-key.pem'
+export const CERT_PRIVATE_KEY_PATH = process.cwd() + '/.secrets/private-key.pem' ||
+  '/.secrets/private-key.pem'
+export const CERT_PUBLIC_KEY_PATH = process.cwd() + '/.secrets/public-key.pem' ||
+  '/.secrets/public-key.pem'
 export const SENTRY_DSN = process.env.SENTRY_DSN
 
 export const PRODUCTION = process.env.NODE_ENV === 'production'

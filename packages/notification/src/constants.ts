@@ -18,10 +18,8 @@ export const PORT = process.env.PORT || 2020
 */
 export const NON_UNICODED_LANGUAGES = ['en']
 
-export const CERT_PUBLIC_KEY_PATH =
-  (process.env.CERT_PUBLIC_KEY_PATH as string) ||
-  '../../.secrets/public-key.pem'
-
+export const CERT_PUBLIC_KEY_PATH = process.cwd() + '/.secrets/public-key.pem' ||
+  '/.secrets/public-key.pem'
 export const SENTRY_DSN = process.env.SENTRY_DSN
 
 export const COUNTRY_CONFIG_URL =

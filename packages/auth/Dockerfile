@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN rm -rf /app/packages/*
+# RUN rm -rf /app/packages/*
 
 COPY packages/auth /app/packages/auth
 COPY packages/commons /app/packages/commons
@@ -14,7 +14,7 @@ RUN yarn install
 WORKDIR /app/packages/commons
 RUN yarn build
 
-WORKDIR /app/packages/auth
+WORKDIR /app/packages/auth && ls -a
 RUN yarn build
 
 CMD yarn start:prod
