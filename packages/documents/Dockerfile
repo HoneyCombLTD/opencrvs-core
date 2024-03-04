@@ -1,7 +1,7 @@
 FROM node:gallium-alpine
 
 WORKDIR /app
-
+ENV OPENCRVS_METABASE_SITE_NAME=taopencrvs
 COPY . .
 
 RUN rm -rf /app/packages/*
