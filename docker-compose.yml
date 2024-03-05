@@ -22,6 +22,8 @@ services:
       context: ./packages/dashboards
       dockerfile: ./Dockerfile
     restart: unless-stopped
+    environment:
+      - OPENCRVS_METABASE_SITE_NAME=taopencrvs
 
   components:
     image: opencrvs/ocrvs-components:${VERSION:-latest}
@@ -215,6 +217,8 @@ services:
       - INFLUX_PORT=8086
       - INFLUX_DB=ocrvs
       - WAIT_HOSTS=192.168.0.50:27017,192.168.0.50:8086,192.168.0.50:9000,192.168.0.50:9200
+    ports:
+      - '9000:9000'
   documents:
     image: opencrvs/ocrvs-documents:${VERSION:-latest}
     build:
@@ -224,5 +228,6 @@ services:
     environment:
       - NODE_ENV=development
       - COUNTRY_CONFIG_URL=http://192.168.0.50:3040
+      - MINIO_HOST=192.168.0.50
     ports:
       - '9050:9050'
