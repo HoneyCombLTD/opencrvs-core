@@ -24,6 +24,9 @@ services:
     restart: unless-stopped
     environment:
       - OPENCRVS_METABASE_SITE_NAME=taopencrvs
+      - OPENCRVS_METABASE_SITE_URL=http://192.168.0.50:4444
+      - OPENCRVS_METABASE_DB_HOST=192.168.0.50
+      - OPENCRVS_METABASE_MAP_URL=http://192.168.0.50:3040/content/farajaland-map.geojson
 
   components:
     image: opencrvs/ocrvs-components:${VERSION:-latest}
@@ -106,9 +109,9 @@ services:
       - COUNTRY_CONFIG_URL=http://192.168.0.50:3040/
       - CONFIG_API_URL=http://config:2021
       - FHIR_URL=http://192.168.0.50:5001/fhir
-      - MONGO_URL=mongodb://mongo1/metrics
-      - HEARTH_MONGO_URL=mongodb://mongo1/hearth-dev
-      - DASHBOARD_MONGO_URL=mongodb://mongo1/performance
+      - MONGO_URL=mongodb://192.168.0.50:27017/metrics
+      - HEARTH_MONGO_URL=mongodb://192.168.0.50:27017/hearth-dev
+      - DASHBOARD_MONGO_URL=mongodb://192.168.0.50:27017/performance
       - SEARCH_URL=http://search:9090/
       - USER_MANAGEMENT_URL=http://user-mgnt:3030
       - DOCUMENTS_URL=http://documents:9050
@@ -123,7 +126,7 @@ services:
     environment:
       - NODE_ENV=development
       - METRICS_URL=http://metrics:1050
-      - OPENHIM_MONGO_URL=mongodb://mongo1/openhim-dev
+      - OPENHIM_MONGO_URL=mongodb://192.168.0.50:27017/openhim-dev
   auth:
     image: opencrvs/ocrvs-auth:${VERSION:-latest}
     build:
@@ -146,7 +149,7 @@ services:
       dockerfile: ./packages/user-mgnt/Dockerfile
     restart: unless-stopped
     environment:
-      - MONGO_URL=mongodb://mongo1/user-mgnt
+      - MONGO_URL=mongodb://192.168.0.50:27017/user-mgnt
       - NOTIFICATION_SERVICE_URL=http://notification:2020/
       - FHIR_URL=http://192.168.0.50:5001/fhir
       - HOST=0.0.0.0
@@ -161,7 +164,7 @@ services:
     restart: unless-stopped
     environment:
       - REDIS_HOST=redis://192.168.0.50:6379
-      - MONGO_URL=mongodb://mongo1/webhooks
+      - MONGO_URL=mongodb://192.168.0.50:27017/webhooks
       - AUTH_URL=http://auth:4040
       - USER_MANAGEMENT_URL=http://user-mgnt:3030/
       - FHIR_URL=http://192.168.0.50:5001/fhir
@@ -192,7 +195,7 @@ services:
       - COUNTRY_CONFIG_URL=http://192.168.0.50:3040
       - HOST=0.0.0.0
       - PORT=2021
-      - MONGO_URL=mongodb://mongo1/application-config
+      - MONGO_URL=mongodb://192.168.0.50:27017/application-config
       - FHIR_URL=http://192.168.0.50:5001/fhir
       - SEARCH_URL=http://search:9090/
       - METRICS_URL=http://metrics:1050
@@ -207,11 +210,11 @@ services:
       dockerfile: ./packages/migration/Dockerfile
     restart: unless-stopped
     environment:
-      - USER_MGNT_MONGO_URL=mongodb://mongo1/user-mgnt
-      - APPLICATION_CONFIG_MONGO_URL=mongodb://mongo1/application-config
-      - HEARTH_MONGO_URL=mongodb://mongo1/hearth-dev
-      - DASHBOARD_MONGO_URL=mongodb://mongo1/performance
-      - OPENHIM_MONGO_URL=mongodb://mongo1/openhim-dev
+      - USER_MGNT_MONGO_URL=mongodb://192.168.0.50:27017/user-mgnt
+      - APPLICATION_CONFIG_MONGO_URL=mongodb://192.168.0.50:27017/application-config
+      - HEARTH_MONGO_URL=mongodb://192.168.0.50:27017/hearth-dev
+      - DASHBOARD_MONGO_URL=mongodb://192.168.0.50:27017/performance
+      - OPENHIM_MONGO_URL=mongodb://192.168.0.50:27017/openhim-dev
       - ES_HOST=192.168.0.50:9200
       - INFLUX_HOST=influxdb
       - INFLUX_PORT=8086
