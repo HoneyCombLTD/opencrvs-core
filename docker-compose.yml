@@ -27,6 +27,12 @@ services:
       - OPENCRVS_METABASE_SITE_URL=http://192.168.0.50:4444
       - OPENCRVS_METABASE_DB_HOST=192.168.0.50
       - OPENCRVS_METABASE_MAP_URL=http://192.168.0.50:3040/content/farajaland-map.geojson
+      - OPENCRVS_METABASE_DB_USER=""
+      - OPENCRVS_METABASE_DB_PASS=""
+      - OPENCRVS_METABASE_DB_AUTH_DB=""
+      - OPENCRVS_METABASE_MAP_NAME=Farajaland
+      - OPENCRVS_METABASE_MAP_REGION_KEY=State
+      - OPENCRVS_METABASE_MAP_REGION_NAME=State
 
   components:
     image: opencrvs/ocrvs-components:${VERSION:-latest}
