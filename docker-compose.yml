@@ -221,6 +221,7 @@ services:
       - HEARTH_MONGO_URL=mongodb://192.168.0.50:27017/hearth-dev
       - DASHBOARD_MONGO_URL=mongodb://192.168.0.50:27017/performance
       - OPENHIM_MONGO_URL=mongodb://192.168.0.50:27017/openhim-dev
+      - PERFORMANCE_MONGO_URL=mongodb://192.168.0.50/performance
       - ES_HOST=192.168.0.50:9200
       - INFLUX_HOST=influxdb
       - INFLUX_PORT=8086
