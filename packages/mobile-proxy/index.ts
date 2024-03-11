@@ -54,7 +54,7 @@ if (!iface) {
 async function init() {
   const url = await ngrok.connect({
     proto: 'http', // http|tcp|tls, defaults to http
-    addr: 80, // port or network address, defaults to 80
+    addr: 3000, // port or network address, defaults to 80
     authtoken: process.env.AUTH_TOKEN, // your authtoken from ngrok.com
     region: 'eu'
   })
