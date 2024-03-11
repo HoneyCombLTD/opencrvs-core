@@ -33,7 +33,7 @@ services:
       - OPENCRVS_METABASE_MAP_REGION_KEY=State
       - OPENCRVS_METABASE_MAP_REGION_NAME=State
     ports:
-      - "3001:3000"
+      - "3000:3000"
   components:
     image: opencrvs/ocrvs-components:${VERSION:-latest}
     build:
@@ -47,7 +47,7 @@ services:
       dockerfile: ./packages/login/Dockerfile
     restart: unless-stopped
     ports:
-      - "3021:80"
+      - "3020:80"
   gateway:
     image: opencrvs/ocrvs-gateway:${VERSION:-latest}
     build:
@@ -214,7 +214,7 @@ services:
       - DOCUMENTS_URL=http://documents:9050
       - CHECK_INVALID_TOKEN=true
     ports:
-      - "2022:80"
+      - "2021:80"
   migration:
     image: opencrvs/ocrvs-migration:${VERSION:-latest}
     build:
