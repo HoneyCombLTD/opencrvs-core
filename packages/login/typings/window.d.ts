@@ -10,7 +10,7 @@
  */
 interface Window {
   config: {
-    AUTH_API_URL: string
+    AUTH_API_URL: 'http://192.168.0.50:4040'
     CONFIG_API_URL: string
     COUNTRY_CONFIG_URL: string
     COUNTRY: string
