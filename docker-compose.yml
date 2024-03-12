@@ -49,7 +49,7 @@ services:
     environment:
       - AUTH_API_URL=http://192.168.0.50:4040
     ports:
-      - "80:80"
+      - "8080:80"
   gateway:
     image: opencrvs/ocrvs-gateway:${VERSION:-latest}
     build:
@@ -217,7 +217,7 @@ services:
       - DOCUMENTS_URL=http://documents:9050
       - CHECK_INVALID_TOKEN=true
     ports:
-      - "2021:2021"
+      - "2022:2021"
   migration:
     image: opencrvs/ocrvs-migration:${VERSION:-latest}
     build:
