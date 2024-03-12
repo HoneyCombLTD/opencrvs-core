@@ -49,7 +49,7 @@ services:
     environment:
       - AUTH_API_URL=http://192.168.0.50:4040
     ports:
-      - "8080:80"
+      - "8000:80"
   gateway:
     image: opencrvs/ocrvs-gateway:${VERSION:-latest}
     build:
