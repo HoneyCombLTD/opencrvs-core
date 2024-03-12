@@ -12,7 +12,7 @@ interface Window {
   config: {
     AUTH_API_URL: 'http://192.168.0.50:4040'
     CONFIG_API_URL: 'http://config:2021'
-    COUNTRY_CONFIG_URL: 'http://192.168.0.50:3040/'
+    COUNTRY_CONFIG_URL: 'http://192.168.0.50:3040'
     COUNTRY: string
     LANGUAGES: string
     AVAILABLE_LANGUAGES_SELECT: string
