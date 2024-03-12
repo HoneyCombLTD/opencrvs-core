@@ -46,7 +46,7 @@ export interface IAuthenticationData {
 }
 
 export const client = axios.create({
-  baseURL: window.config.AUTH_API_URL
+  baseURL: 'http://192.168.0.50:4040'
 })
 
 export interface IAuthenticateResponse {
