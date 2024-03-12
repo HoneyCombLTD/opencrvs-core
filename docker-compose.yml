@@ -49,8 +49,7 @@ services:
     environment:
       - AUTH_API_URL=http://192.168.0.50:4040
       - AUTH_URL=http://localhost:4040
-    ports:
-      - "8000:80"
+
   gateway:
     image: opencrvs/ocrvs-gateway:${VERSION:-latest}
     build:
@@ -209,7 +208,7 @@ services:
       - COUNTRY_CONFIG_URL=http://192.168.0.50:3040
       - HOST=0.0.0.0
       - PORT=2021
-      - LOGIN_URL=http://192.168.0.50:8000/
+      - LOGIN_URL=http://login:3020/
       - MONGO_URL=mongodb://192.168.0.50:27017/application-config
       - FHIR_URL=http://192.168.0.50:5001/fhir
       - SEARCH_URL=http://search:9090/
