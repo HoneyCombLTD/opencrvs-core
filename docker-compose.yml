@@ -46,6 +46,8 @@ services:
       context: .
       dockerfile: ./packages/login/Dockerfile
     restart: unless-stopped
+    environment:
+      - AUTH_API_URL=http://192.168.0.50:4040
     ports:
       - "3020:80"
   gateway:
