@@ -98,7 +98,7 @@ export function request<T>(options: AxiosRequestConfig) {
 
 const getApplicationConfig = () => {
   return request<IApplicationConfigResponse>({
-    url: new URL('/publicConfig', 'http://config:2021').toString(),
+    url: new URL('/publicConfig', 'http://192.168.0.50:2021').toString(),
     method: 'GET'
   })
 }
