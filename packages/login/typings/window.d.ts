@@ -13,9 +13,9 @@ interface Window {
     AUTH_API_URL: 'http://192.168.0.50:4040'
     CONFIG_API_URL: 'http://config:2021'
     COUNTRY_CONFIG_URL: 'http://192.168.0.50:3040'
-    COUNTRY: string
-    LANGUAGES: string
-    AVAILABLE_LANGUAGES_SELECT: string
+    COUNTRY: 'FAR'
+    LANGUAGES: 'en,fr'
+    AVAILABLE_LANGUAGES_SELECT: 'en:English,fr:Français,bn:বাংলা'
     USER_NOTIFICATION_DELIVERY_METHOD: 'sms' | 'email'
     INFORMANT_NOTIFICATION_DELIVERY_METHOD: 'sms' | 'email'
     CLIENT_APP_URL: string
