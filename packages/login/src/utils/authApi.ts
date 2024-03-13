@@ -9,7 +9,7 @@
  * Copyright (C) The OpenCRVS Authors located at https://github.com/opencrvs/opencrvs-core/blob/master/AUTHORS.
  */
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
-import * as Sentry from '@sentry/react'
+// import * as Sentry from '@sentry/react'
 
 export interface ICodeVerifyData {
   nonce: string
@@ -46,7 +46,7 @@ export interface IAuthenticationData {
 }
 
 export const client = axios.create({
-  baseURL: 'http://auth:4040'
+  baseURL: 'http://192.168.0.50:4040'
 })
 
 export interface IAuthenticateResponse {
@@ -87,7 +87,7 @@ export function request<T>(options: AxiosRequestConfig) {
     } else {
       // Something else happened while setting up the request
       console.error('Error Message:', error.message)
-      Sentry.captureException(error)
+      // Sentry.captureException(error)
     }
 
     throw error
