@@ -105,7 +105,7 @@ const getApplicationConfig = () => {
 
 const authenticate = (data: IAuthenticationData) => {
   return request<IAuthenticateResponse>({
-    url: new URL('authenticate', 'http://auth:4040').toString(),
+    url: new URL('authenticate', 'http://192.168.0.50:4040').toString(),
     method: 'POST',
     data
   })
@@ -119,7 +119,7 @@ const resendAuthenticationCode = (
   return request({
     url: new URL(
       '/resendAuthenticationCode',
-      'http://auth:4040'
+      'http://192.168.0.50:4040'
     ).toString(),
     method: 'POST',
     data: { nonce, notificationEvent, retrievalFlow }
@@ -128,7 +128,7 @@ const resendAuthenticationCode = (
 
 const verifyCode = (data: ICodeVerifyData): Promise<IAuthenticateResponse> => {
   return request({
-    url: new URL('verifyCode', 'http://auth:4040').toString(),
+    url: new URL('verifyCode', 'http://192.168.0.50:4040').toString(),
     method: 'POST',
     data
   })
@@ -149,7 +149,7 @@ const verifyUser = (
   verificationDetails: IUserVerificationDetails
 ): Promise<IUserVerifyResponse> => {
   return request({
-    url: new URL('verifyUser', 'http://auth:4040').toString(),
+    url: new URL('verifyUser', 'http://192.168.0.50:4040').toString(),
     method: 'POST',
     data: verificationDetails
   })
@@ -165,7 +165,7 @@ const verifyNumber = (
   code: string
 ): Promise<IVerifyNumberResponse> => {
   return request({
-    url: new URL('verifyNumber', 'http://auth:4040').toString(),
+    url: new URL('verifyNumber', 'http://192.168.0.50:4040').toString(),
     method: 'POST',
     data: { nonce, code }
   })
@@ -184,7 +184,7 @@ const verifySecurityAnswer = (
   answer: string
 ): Promise<IVerifySecurityAnswerResponse> => {
   return request({
-    url: new URL('verifySecurityAnswer', 'http://auth:4040').toString(),
+    url: new URL('verifySecurityAnswer', 'http://192.168.0.50:4040').toString(),
     method: 'POST',
     data: { nonce, answer }
   })
@@ -192,7 +192,7 @@ const verifySecurityAnswer = (
 
 const changePassword = (nonce: string, newPassword: string): Promise<void> => {
   return request({
-    url: new URL('changePassword', 'http://auth:4040').toString(),
+    url: new URL('changePassword', 'http://192.168.0.50:4040').toString(),
     method: 'POST',
     data: { nonce, newPassword }
   })
