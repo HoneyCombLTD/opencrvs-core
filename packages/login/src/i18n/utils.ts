@@ -16,7 +16,7 @@ export function getAvailableLanguages() {
 }
 
 export function getDefaultLanguage() {
-  return getAvailableLanguages()?[0]
+  return getAvailableLanguages()[0]
 }
 
 export function storeLanguage(language: string) {

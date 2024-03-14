@@ -15,6 +15,10 @@ services:
       context: .
       dockerfile: ./packages/client/Dockerfile
     restart: unless-stopped
+    environment:
+      - AUTH_URL=http://192.168.0.50:4040
+      - SENTRY=''
+      - LOGROCKET=''
     ports:
       - '3001:80'
   dashboards:
