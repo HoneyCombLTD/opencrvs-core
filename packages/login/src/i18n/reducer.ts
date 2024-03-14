@@ -53,7 +53,7 @@ function extractLanguageSelectConfig(
 }
 
 const supportedLanguages: ISupportedLanguages[] = extractLanguageSelectConfig(
-  'en:English,fr:Français,bn:বাংলা'
+  process.env.VITE_AVAILABLE_LANGUAGES_SELECT.toString()
 )
 
 export const initLanguages = () => {
