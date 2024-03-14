@@ -41,7 +41,7 @@ export const createClient = (
   restoredCache?: InMemoryCache
 ) => {
   const httpLink = createHttpLink({
-    uri: new URL('graphql', window.config.API_GATEWAY_URL).toString()
+    uri: new URL('graphql', process.env.VITE_API_GATEWAY_URL).toString()
   })
 
   const authLink = setContext((_, { headers }) => {

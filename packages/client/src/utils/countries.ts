@@ -93,7 +93,7 @@ export const countries = [
   /*
    * Include imaginary Farajaland country to country lists for demo environments
    */
-  process.env.COUNTRY === 'FAR'
+  process.env.VITE_COUNTRY === 'FAR'
     ? { value: 'FAR', label: messages.FAR }
     : null,
   { value: 'FLK', label: messages.FLK },

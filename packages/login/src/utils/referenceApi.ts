@@ -23,7 +23,7 @@ interface IContentResponse {
 
 export async function loadContent(): Promise<IContentResponse> {
   return await request<IContentResponse>({
-    url: new URL('/content/login', process.env.COUNTRY_CONFIG_URL).toString(),
+    url: new URL('/content/login', process.env.VITE_COUNTRY_CONFIG_URL).toString(),
     method: 'GET'
   })
 }

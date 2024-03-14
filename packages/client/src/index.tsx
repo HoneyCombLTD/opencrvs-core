@@ -41,7 +41,7 @@ if (
   window.location.hostname !== '127.0.0.1'
 ) {
   // setup error reporting using sentry
-  if (process.env.SENTRY) {
+  if (process.env.VITE_SENTRY) {
     Sentry.init({
       release: import.meta.env.REACT_APP_VERSION,
       environment: import.meta.env.NODE_ENV,
@@ -50,19 +50,19 @@ if (
       // We recommend adjusting this value in production, or using tracesSampler
       // for finer control
       tracesSampleRate: 1.0,
-      dsn: process.env.SENTRY
+      dsn: process.env.VITE_SENTRY
     })
   }
 
   // setup log rocket to ship log messages and record user errors
-  if (process.env.LOGROCKET) {
-    LogRocket.init(process.env.LOGROCKET, {
+  if (process.env.VITE_LOGROCKET) {
+    LogRocket.init(process.env.VITE_LOGROCKET, {
       release: import.meta.env.VITE_APP_VERSION
     })
   }
 
   // Integrate the two
-  if (process.env.SENTRY && process.env.LOGROCKET) {
+  if (process.env.VITE_SENTRY && process.env.VITE_LOGROCKET) {
     Sentry.configureScope((scope) => {
       scope.addEventProcessor(async (event) => {
         if (!event.extra) {

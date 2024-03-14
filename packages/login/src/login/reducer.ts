@@ -126,7 +126,7 @@ export const loginReducer: LoopReducer<LoginState, actions.Action> = (
           Cmd.run(
             (getState: () => IStoreState) => {
               window.location.assign(
-                `${process.env.CLIENT_APP_URL}?token=${
+                `${process.env.VITE_CLIENT_APP_URL}?token=${
                   action.payload.token
                 }&lang=${getState().i18n.language}`
               )
@@ -215,7 +215,7 @@ export const loginReducer: LoopReducer<LoginState, actions.Action> = (
                     getState().i18n.language
                   }`,
 
-              process.env.CLIENT_APP_URL
+              process.env.VITE_CLIENT_APP_URL
             ).toString()
 
             window.location.assign(fullURL)
@@ -230,7 +230,7 @@ export const loginReducer: LoopReducer<LoginState, actions.Action> = (
         },
         Cmd.run(() => {
           window.location.assign(
-            `${process.env.CLIENT_APP_URL}?token=${state.token}`
+            `${process.env.VITE_CLIENT_APP_URL}?token=${state.token}`
           )
         })
       )
