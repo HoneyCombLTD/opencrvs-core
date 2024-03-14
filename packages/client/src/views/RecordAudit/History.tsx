@@ -210,7 +210,7 @@ export const GetHistory = ({
     })
   }
 
-  if (!window.config.EXTERNAL_VALIDATION_WORKQUEUE) {
+  if (!import.meta.env.VITE_EXTERNAL_VALIDATION_WORKQUEUE) {
     allHistoryData = allHistoryData.filter(({ regStatus }: History) => {
       return regStatus !== RegStatus.WaitingValidation
     })

@@ -83,7 +83,7 @@ export function getUserAuditDescription(
 
 export function checkExternalValidationStatus(status?: string | null): boolean {
   return !(
-    !window.config.EXTERNAL_VALIDATION_WORKQUEUE &&
+    !import.meta.env.VITE_EXTERNAL_VALIDATION_WORKQUEUE &&
     status === 'WAITING_VALIDATION'
   )
 }
