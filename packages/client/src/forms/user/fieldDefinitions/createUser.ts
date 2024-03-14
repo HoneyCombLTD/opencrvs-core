@@ -129,7 +129,7 @@ export function userSectionFormType(): ISerializedFormSection {
             name: 'phoneNumber',
             type: TEXT,
             label: userFormMessages.phoneNumber,
-            required: window.config.USER_NOTIFICATION_DELIVERY_METHOD === 'sms',
+            required: process.env.USER_NOTIFICATION_DELIVERY_METHOD === 'sms',
             initialValue: '',
             validator: [{ operation: 'phoneNumberFormat' }],
             mapping: {
@@ -147,8 +147,7 @@ export function userSectionFormType(): ISerializedFormSection {
             name: 'email',
             type: TEXT,
             label: userFormMessages.email,
-            required:
-              window.config.USER_NOTIFICATION_DELIVERY_METHOD === 'email',
+            required: process.env.USER_NOTIFICATION_DELIVERY_METHOD === 'email',
             initialValue: '',
             validator: [{ operation: 'emailAddressFormat' }]
           },
