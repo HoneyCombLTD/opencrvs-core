@@ -10,17 +10,17 @@
  */
 interface Window {
   config: {
-    AUTH_API_URL: 'http://192.168.0.50:4040'
-    CONFIG_API_URL: 'http://config:2021'
-    COUNTRY_CONFIG_URL: 'http://192.168.0.50:3040'
-    COUNTRY: 'FAR'
-    LANGUAGES: 'en,fr'
-    AVAILABLE_LANGUAGES_SELECT: 'en:English,fr:Français,bn:বাংলা'
+    AUTH_API_URL: String
+    CONFIG_API_URL: String
+    COUNTRY_CONFIG_URL: String
+    COUNTRY: String
+    LANGUAGES: String
+    AVAILABLE_LANGUAGES_SELECT: String
     USER_NOTIFICATION_DELIVERY_METHOD: 'sms' | 'email'
     INFORMANT_NOTIFICATION_DELIVERY_METHOD: 'sms' | 'email'
-    CLIENT_APP_URL: string
+    CLIENT_APP_URL: String
     PHONE_NUMBER_PATTERN: RegExp
-    LOGROCKET: ''
-    SENTRY: ''
+    LOGROCKET: String
+    SENTRY: String
   }
 }

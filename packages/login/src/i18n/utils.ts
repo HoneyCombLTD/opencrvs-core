@@ -12,11 +12,11 @@ import { storage } from '@login/storage'
 import { useLocation } from 'react-router'
 
 export function getAvailableLanguages() {
-  return 'en,fr'.split(',')
+  return process.env.LANGUAGES?.split(',')
 }
 
 export function getDefaultLanguage() {
-  return getAvailableLanguages()[0]
+  return getAvailableLanguages()?[0]
 }
 
 export function storeLanguage(language: string) {

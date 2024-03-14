@@ -64,7 +64,7 @@ export function StepTwoContainer() {
 
   const field = stepTwoFields.code
   const notificationEvent = NotificationEvent.TWO_FACTOR_AUTHENTICATION
-  const notificationMethod = 'sms' | 'email'
+  const notificationMethod = process.env.USER_NOTIFICATION_DELIVERY_METHOD
 
   return (
     <Container id="login-step-two-box">

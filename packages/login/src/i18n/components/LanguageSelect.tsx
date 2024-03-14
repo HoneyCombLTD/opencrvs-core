@@ -29,7 +29,7 @@ const SelectContainer = styled.div`
 `
 
 function useLanguage(selectedLanguage: string, paramLanguage: string | null) {
-  const applicationLanguages = 'en,fr'.split(',')
+  const applicationLanguages = process.env.LANGUAGES?.split(',')
   const history = useHistory()
   const location = useLocation()
   const dispatch = useDispatch()
@@ -37,7 +37,7 @@ function useLanguage(selectedLanguage: string, paramLanguage: string | null) {
 
   const languageOptions: ISelect2Option[] = Object.values(languages)
     .map(({ lang, displayName }) => ({ value: lang, label: displayName }))
-    .filter(({ value }) => applicationLanguages.includes(value))
+    .filter(({ value }) => applicationLanguages?.includes(value))
 
   const onChange = ({ value }: ISelect2Option) => {
     if (paramLanguage) {

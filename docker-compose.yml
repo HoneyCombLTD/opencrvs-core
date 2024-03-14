@@ -15,6 +15,8 @@ services:
       context: .
       dockerfile: ./packages/client/Dockerfile
     restart: unless-stopped
+    ports:
+      - '3001:80'
   dashboards:
     image: opencrvs/ocrvs-dashboards:${VERSION:-latest}
     build:
@@ -48,7 +50,16 @@ services:
     restart: unless-stopped
     environment:
       - AUTH_API_URL=http://192.168.0.50:4040
-      - AUTH_URL=http://localhost:4040
+      - AUTH_URL=http://192.168.0.50:4040
+      - CLIENT_APP_URL=http://192.168.0.50:3001
+      - USER_NOTIFICATION_DELIVERY_METHOD='sms' | 'email'
+      - CONFIG_API_URL='http://192.168.0.50:2021'
+      - COUNTRY_CONFIG_URL='http://192.168.0.50:3040'
+      - AVAILABLE_LANGUAGES_SELECT='en:English,fr:Français,bn:বাংলা'
+      - COUNTRY='FAR'
+      - LANGUAGES='en,fr'
+      - SENTRY=''
+      - LOGROCKET=''
     ports:
       - "8000:80"
   gateway:
