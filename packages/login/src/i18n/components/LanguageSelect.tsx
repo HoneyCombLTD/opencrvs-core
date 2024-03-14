@@ -29,7 +29,7 @@ const SelectContainer = styled.div`
 `
 
 function useLanguage(selectedLanguage: string, paramLanguage: string | null) {
-  const applicationLanguages = process.env.VITE_LANGUAGES.split(',')
+  const applicationLanguages = import.meta.env.VITE_LANGUAGES.split(',')
   const history = useHistory()
   const location = useLocation()
   const dispatch = useDispatch()

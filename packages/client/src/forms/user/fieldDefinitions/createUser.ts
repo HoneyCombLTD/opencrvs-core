@@ -129,7 +129,7 @@ export function userSectionFormType(): ISerializedFormSection {
             name: 'phoneNumber',
             type: TEXT,
             label: userFormMessages.phoneNumber,
-            required: process.env.VITE_USER_NOTIFICATION_DELIVERY_METHOD === 'sms',
+            required: import.meta.env.VITE_USER_NOTIFICATION_DELIVERY_METHOD === 'sms',
             initialValue: '',
             validator: [{ operation: 'phoneNumberFormat' }],
             mapping: {
@@ -147,7 +147,7 @@ export function userSectionFormType(): ISerializedFormSection {
             name: 'email',
             type: TEXT,
             label: userFormMessages.email,
-            required: process.env.VITE_USER_NOTIFICATION_DELIVERY_METHOD === 'email',
+            required: import.meta.env.VITE_USER_NOTIFICATION_DELIVERY_METHOD === 'email',
             initialValue: '',
             validator: [{ operation: 'emailAddressFormat' }]
           },

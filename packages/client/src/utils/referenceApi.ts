@@ -127,7 +127,7 @@ export interface IApplicationConfigResponse {
 }
 
 async function loadConfig(): Promise<IApplicationConfigResponse> {
-  const url = `${process.env.VITE_CONFIG_API_URL}/config`
+  const url = `${import.meta.env.VITE_CONFIG_API_URL}/config`
   const res = await fetch(url, {
     method: 'GET',
     headers: {
@@ -158,7 +158,7 @@ async function loadConfig(): Promise<IApplicationConfigResponse> {
 async function loadConfigAnonymousUser(): Promise<
   Partial<IApplicationConfigResponse>
 > {
-  const url = `${process.env.VITE_CONFIG_API_URL}/publicConfig`
+  const url = `${import.meta.env.VITE_CONFIG_API_URL}/publicConfig`
   const res = await fetch(url, {
     method: 'GET'
   })
@@ -170,7 +170,7 @@ async function loadConfigAnonymousUser(): Promise<
 }
 
 async function loadForms(): Promise<LoadFormsResponse> {
-  const url = `${process.env.VITE_CONFIG_API_URL}/forms`
+  const url = `${import.meta.env.VITE_CONFIG_API_URL}/forms`
 
   const res = await fetch(url, {
     method: 'GET',
@@ -200,7 +200,7 @@ export type LoadValidatorsResponse = Record<string, Validator>
 async function importValidators(): Promise<LoadValidatorsResponse> {
   // https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
   const validators = await import(
-    /* @vite-ignore */ `${process.env.VITE_COUNTRY_CONFIG_URL}/validators.js`
+    /* @vite-ignore */ `${import.meta.env.VITE_COUNTRY_CONFIG_URL}/validators.js`
   )
 
   return validators
@@ -210,7 +210,7 @@ export type LoadConditionalsResponse = Record<string, Conditional>
 export async function importConditionals(): Promise<LoadConditionalsResponse> {
   // https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
   const { conditionals } = await import(
-    /* @vite-ignore */ `${process.env.VITE_COUNTRY_CONFIG_URL}/conditionals.js`
+    /* @vite-ignore */ `${import.meta.env.VITE_COUNTRY_CONFIG_URL}/conditionals.js`
   )
   return conditionals
 }
@@ -228,7 +228,7 @@ async function importHandlebarHelpers(): Promise<LoadHandlebarHelpersResponse> {
   try {
     // https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
     const handlebars = await import(
-      /* @vite-ignore */ `${process.env.VITE_COUNTRY_CONFIG_URL}/handlebars.js`
+      /* @vite-ignore */ `${import.meta.env.VITE_COUNTRY_CONFIG_URL}/handlebars.js`
     )
     return handlebars
   } catch (error) {
@@ -236,7 +236,7 @@ async function importHandlebarHelpers(): Promise<LoadHandlebarHelpersResponse> {
   }
 }
 async function loadCertificateConfiguration(): Promise<CertificateConfiguration> {
-  const url = `${process.env.VITE_COUNTRY_CONFIG_URL}/certificate-configuration`
+  const url = `${import.meta.env.VITE_COUNTRY_CONFIG_URL}/certificate-configuration`
 
   const res = await fetch(url, {
     method: 'GET'
@@ -264,7 +264,7 @@ async function loadCertificateConfiguration(): Promise<CertificateConfiguration>
 }
 
 async function loadContent(): Promise<IContentResponse> {
-  const url = `${process.env.VITE_COUNTRY_CONFIG_URL}/content/client`
+  const url = `${import.meta.env.VITE_COUNTRY_CONFIG_URL}/content/client`
 
   const res = await fetch(url, {
     method: 'GET',
@@ -285,7 +285,7 @@ async function loadContent(): Promise<IContentResponse> {
 }
 
 async function loadLocations(): Promise<ILocationDataResponse> {
-  const url = `${process.env.VITE_API_GATEWAY_URL}location?type=ADMIN_STRUCTURE&_count=0`
+  const url = `${import.meta.env.VITE_API_GATEWAY_URL}location?type=ADMIN_STRUCTURE&_count=0`
 
   const res = await fetch(url, {
     method: 'GET',
@@ -357,10 +357,10 @@ function generateLocationResource(fhirLocation: fhir.Location): ILocation {
 
 async function loadFacilities(): Promise<IFacilitiesDataResponse> {
   const resCRVSOffices = await fetch(
-    `${process.env.VITE_API_GATEWAY_URL}location?type=CRVS_OFFICE&_count=0`
+    `${import.meta.env.VITE_API_GATEWAY_URL}location?type=CRVS_OFFICE&_count=0`
   )
   const resHealthFacilities = await fetch(
-    `${process.env.VITE_API_GATEWAY_URL}location?type=HEALTH_FACILITY&_count=0`
+    `${import.meta.env.VITE_API_GATEWAY_URL}location?type=HEALTH_FACILITY&_count=0`
   )
 
   const locationBundleCRVSOffices = await resCRVSOffices.json()

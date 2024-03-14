@@ -31,22 +31,22 @@ if (
   window.location.hostname !== '127.0.0.1'
 ) {
   // setup error reporting using sentry
-  if (process.env.VITE_SENTRY) {
+  if (import.meta.env.VITE_SENTRY) {
     Sentry.init({
-      environment: process.env.HOSTNAME,
-      dsn: process.env.VITE_SENTRY,
+      environment: import.meta.env.HOSTNAME,
+      dsn: import.meta.env.VITE_SENTRY,
       integrations: [new BrowserTracing()],
       tracesSampleRate: 1.0
     })
   }
 
   // setup log rocket to ship log messages and record user errors
-  if (process.env.VITE_LOGROCKET) {
-    LogRocket.init(process.env.VITE_LOGROCKET)
+  if (import.meta.env.VITE_LOGROCKET) {
+    LogRocket.init(import.meta.env.VITE_LOGROCKET)
   }
 
   // Integrate the two
-  if (process.env.VITE_SENTRY && process.env.VITE_LOGROCKET) {
+  if (import.meta.env.VITE_SENTRY && import.meta.env.VITE_LOGROCKET) {
     Sentry.configureScope((scope) => {
       scope.addEventProcessor(async (event) => {
         if (!event.extra) {

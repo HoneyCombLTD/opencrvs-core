@@ -13,7 +13,7 @@ import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 import * as Sentry from '@sentry/react'
 
 const client = axios.create({
-  baseURL: process.env.VITE_AUTH_URL
+  baseURL: import.meta.env.VITE_AUTH_URL
 })
 
 function request<T>(options: AxiosRequestConfig) {
@@ -38,7 +38,7 @@ function request<T>(options: AxiosRequestConfig) {
 
 const invalidateToken = (token: string): Promise<void> => {
   return request({
-    url: new URL('invalidateToken', process.env.VITE_AUTH_URL).toString(),
+    url: new URL('invalidateToken', import.meta.env.VITE_AUTH_URL).toString(),
     method: 'POST',
     data: { token }
   })

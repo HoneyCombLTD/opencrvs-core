@@ -46,7 +46,7 @@ export interface IAuthenticationData {
 }
 
 export const client = axios.create({
-  baseURL: process.env.VITE_AUTH_API_URL
+  baseURL: import.meta.env.VITE_AUTH_API_URL
 })
 
 export interface IAuthenticateResponse {
@@ -98,14 +98,14 @@ export function request<T>(options: AxiosRequestConfig) {
 
 const getApplicationConfig = () => {
   return request<IApplicationConfigResponse>({
-    url: new URL('/publicConfig', process.env.VITE_CONFIG_API_URL).toString(),
+    url: new URL('/publicConfig', import.meta.env.VITE_CONFIG_API_URL).toString(),
     method: 'GET'
   })
 }
 
 const authenticate = (data: IAuthenticationData) => {
   return request<IAuthenticateResponse>({
-    url: new URL('authenticate', process.env.VITE_AUTH_API_URL).toString(),
+    url: new URL('authenticate', import.meta.env.VITE_AUTH_API_URL).toString(),
     method: 'POST',
     data
   })
@@ -119,7 +119,7 @@ const resendAuthenticationCode = (
   return request({
     url: new URL(
       '/resendAuthenticationCode',
-      process.env.VITE_AUTH_API_URL
+      import.meta.env.VITE_AUTH_API_URL
     ).toString(),
     method: 'POST',
     data: { nonce, notificationEvent, retrievalFlow }
@@ -128,7 +128,7 @@ const resendAuthenticationCode = (
 
 const verifyCode = (data: ICodeVerifyData): Promise<IAuthenticateResponse> => {
   return request({
-    url: new URL('verifyCode', process.env.VITE_AUTH_API_URL).toString(),
+    url: new URL('verifyCode', import.meta.env.VITE_AUTH_API_URL).toString(),
     method: 'POST',
     data
   })
@@ -149,7 +149,7 @@ const verifyUser = (
   verificationDetails: IUserVerificationDetails
 ): Promise<IUserVerifyResponse> => {
   return request({
-    url: new URL('verifyUser', process.env.VITE_AUTH_API_URL).toString(),
+    url: new URL('verifyUser', import.meta.env.VITE_AUTH_API_URL).toString(),
     method: 'POST',
     data: verificationDetails
   })
@@ -165,7 +165,7 @@ const verifyNumber = (
   code: string
 ): Promise<IVerifyNumberResponse> => {
   return request({
-    url: new URL('verifyNumber', process.env.VITE_AUTH_API_URL).toString(),
+    url: new URL('verifyNumber', import.meta.env.VITE_AUTH_API_URL).toString(),
     method: 'POST',
     data: { nonce, code }
   })
@@ -184,7 +184,7 @@ const verifySecurityAnswer = (
   answer: string
 ): Promise<IVerifySecurityAnswerResponse> => {
   return request({
-    url: new URL('verifySecurityAnswer', process.env.VITE_AUTH_API_URL).toString(),
+    url: new URL('verifySecurityAnswer', import.meta.env.VITE_AUTH_API_URL).toString(),
     method: 'POST',
     data: { nonce, answer }
   })
@@ -192,7 +192,7 @@ const verifySecurityAnswer = (
 
 const changePassword = (nonce: string, newPassword: string): Promise<void> => {
   return request({
-    url: new URL('changePassword', process.env.VITE_AUTH_API_URL).toString(),
+    url: new URL('changePassword', import.meta.env.VITE_AUTH_API_URL).toString(),
     method: 'POST',
     data: { nonce, newPassword }
   })
@@ -200,7 +200,7 @@ const changePassword = (nonce: string, newPassword: string): Promise<void> => {
 
 const sendUserName = (nonce: string): Promise<void> => {
   return request({
-    url: new URL('sendUserName', process.env.VITE_AUTH_API_URL).toString(),
+    url: new URL('sendUserName', import.meta.env.VITE_AUTH_API_URL).toString(),
     method: 'POST',
     data: { nonce }
   })
