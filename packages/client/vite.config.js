@@ -18,7 +18,7 @@ process.env.VITE_APP_COUNTRY_CONFIG_URL =
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, 'env')
+  const env = loadEnv(mode, process.cwd(), '')
 
   const noTreeshakingForEvalPlugin = () => {
     return {
