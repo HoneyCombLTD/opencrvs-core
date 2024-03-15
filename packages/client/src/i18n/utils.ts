@@ -11,7 +11,7 @@
 import { storage } from '@client/storage'
 
 export function getAvailableLanguages() {
-  return window.config.LANGUAGES.split(',')
+  return import.meta.env.VITE_LANGUAGES.split(',')
 }
 
 export function getDefaultLanguage() {
