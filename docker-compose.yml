@@ -17,7 +17,7 @@ services:
     restart: unless-stopped
     environment:
       - VITE_AUTH_URL=http://192.168.0.50:4040
-      - VITE_API_GATEWAY_URL=http://localhost:7070/
+      - VITE_API_GATEWAY_URL=http://192.168.0.50:7070/
       - VITE_SENTRY=''
       - VITE_LOGROCKET=''
       - VITE_EXTERNAL_VALIDATION_WORKQUEUE=true
