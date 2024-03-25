@@ -81,7 +81,7 @@ services:
       - CONFIG_TOKEN_EXPIRY_SECONDS=604800
       - NODE_ENV=development
       - FHIR_URL=http://192.168.0.50:5001/fhir
-      - HEARTH_URL=http://hearth:3447/fhir
+      - HEARTH_URL=http://192.168.0.50:3447/fhir
       - USER_MANAGEMENT_URL=http://user-mgnt:3030/
       - SEARCH_URL=http://search:9090/
       - METRICS_URL=http://metrics:1050
@@ -108,7 +108,7 @@ services:
       - NOTIFICATION_SERVICE_URL=http://notification:2020/
       - USER_MANAGEMENT_URL=http://user-mgnt:3030/
       - COUNTRY_CONFIG_URL=http://192.168.0.50:3040
-      - HEARTH_URL=http://hearth:3447/fhir
+      - HEARTH_URL=http://192.168.0.50:3447/fhir
       - OPENHIM_URL=http://192.168.0.50:5001
       - APPLICATION_CONFIG_URL=http://config:2021/
       - COUNTRY=${COUNTRY:-bgd} # PEN_TEST change to gbr
@@ -124,7 +124,7 @@ services:
       - NODE_ENV=development
       - USER_MANAGEMENT_URL=http://user-mgnt:3030/
       - ES_HOST=192.168.0.50:9200
-      - HEARTH_URL=http://hearth:3447/fhir
+      - HEARTH_URL=http://192.168.0.50:3447/fhir
     ports:
       - '9090:9090'
   metrics:
