@@ -41,7 +41,7 @@ export const createClient = (
   restoredCache?: InMemoryCache
 ) => {
   const httpLink = createHttpLink({
-    uri: new URL('graphql', import.meta.env.VITE_API_GATEWAY_URL).toString()
+    uri: new URL('graphql', 'http://192.168.0.50:7070/').toString()
   })
 
   const authLink = setContext((_, { headers }) => {
