@@ -21,6 +21,7 @@ services:
       - VITE_SENTRY=''
       - VITE_LOGROCKET=''
       - VITE_EXTERNAL_VALIDATION_WORKQUEUE=true
+      - VITE_COUNTRY_CONFIG_URL='http://192.168.0.50:3040'
     ports:
       - '3001:80'
   dashboards:
