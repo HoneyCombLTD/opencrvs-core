@@ -13,7 +13,7 @@ module.exports = function (app) {
   app.use(
     '/gateway',
     proxy({
-      target: 'http://localhost:7070',
+      target: 'http://192.168.0.50:7070',
       changeOrigin: true,
       pathRewrite: {
         '^/gateway': '/'
@@ -23,7 +23,7 @@ module.exports = function (app) {
   app.use(
     '/countryconfig',
     proxy({
-      target: 'http://localhost:3040/bgd',
+      target: 'http://192.168.0.50:3040/bgd',
       changeOrigin: true,
       pathRewrite: {
         '^/countryconfig': '/'
