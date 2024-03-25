@@ -40,7 +40,7 @@ enum Services {
   USER_MGNT = 'user-mgnt',
   METRICS = 'metrics',
   NOTIFICATION = 'notification',
-  COUNTRY_CONFIG = 'http://192.168.0.50:3040',
+  COUNTRY_CONFIG = '192.168.0.50:3040',
   SEARCH = 'search',
   WORKFLOW = 'workflow',
   GATEWAY = 'gateway'

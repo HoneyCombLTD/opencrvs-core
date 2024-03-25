@@ -227,7 +227,8 @@ services:
       - COUNTRY_CONFIG_URL=http://192.168.0.50:3040
       - HOST=0.0.0.0
       - PORT=2021
-      - LOGIN_URL=http://login:3020/
+      - LOGIN_URL=http://login:8000/
+      - CLIENT_APP_URL=http://client:3001/
       - MONGO_URL=mongodb://192.168.0.50:27017/application-config
       - FHIR_URL=http://192.168.0.50:5001/fhir
       - SEARCH_URL=http://search:9090/
