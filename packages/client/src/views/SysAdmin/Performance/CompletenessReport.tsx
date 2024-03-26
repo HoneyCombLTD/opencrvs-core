@@ -71,7 +71,7 @@ export function CompletenessReport({
         label={
           <PerformanceTitle>
             {intl.formatMessage(messages.performanceWithinTargetDaysLabel, {
-              target: JSON.parse(import.meta.env.VITE_BIRTH).REGISTRATION_TARGET,
+              target: import.meta.env.VITE_BIRTH_REGISTRATION_TARGET,
               withPrefix: true
             })}
           </PerformanceTitle>
