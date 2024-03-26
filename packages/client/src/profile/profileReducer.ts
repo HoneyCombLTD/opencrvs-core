@@ -89,7 +89,7 @@ export const profileReducer: LoopReducer<
                 window.location.assign(redirectToURL)
               } else {
                 window.location.assign(
-                  `${import.meta.env.VITE_LOGIN_URL}?lang=${getState().i18n.language}`
+                  (`${import.meta.env.VITE_LOGIN_URL}?lang=${getState().i18n.language}`).toString()
                 )
               }
             },

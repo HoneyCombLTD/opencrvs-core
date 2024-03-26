@@ -32,7 +32,7 @@ services:
       - VITE_INFORMANT_NOTIFICATION_DELIVERY_METHOD='sms' | 'email'
       - VITE_COUNTRY='FAR'
       - VITE_USER_NOTIFICATION_DELIVERY_METHOD='sms' | 'email'
-      - VITE_LOGIN_URL=http://login:8000/
+      - VITE_LOGIN_URL=http://login:8000
     ports: 
       - '3001:80'
   dashboards:
