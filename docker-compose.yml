@@ -22,6 +22,7 @@ services:
       - VITE_LOGROCKET=''
       - VITE_EXTERNAL_VALIDATION_WORKQUEUE=true
       - VITE_COUNTRY_CONFIG_URL='http://192.168.0.50:3040'
+      - MINIO_URL=192.168.0.50:3535
     ports:
       - '3001:80'
   dashboards:
@@ -270,5 +271,6 @@ services:
       - NODE_ENV=development
       - COUNTRY_CONFIG_URL=http://192.168.0.50:3040
       - MINIO_HOST=192.168.0.50
+      - MINIO_URL=192.168.0.50:3535
     ports:
       - '9050:9050'
