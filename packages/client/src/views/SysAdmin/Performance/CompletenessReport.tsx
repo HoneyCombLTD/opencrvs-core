@@ -71,7 +71,7 @@ export function CompletenessReport({
         label={
           <PerformanceTitle>
             {intl.formatMessage(messages.performanceWithinTargetDaysLabel, {
-              target: window.config[selectedEvent].REGISTRATION_TARGET,
+              target: JSON.parse(import.meta.env.VITE_BIRTH).REGISTRATION_TARGET,
               withPrefix: true
             })}
           </PerformanceTitle>

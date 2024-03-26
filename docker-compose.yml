@@ -26,7 +26,8 @@ services:
       - VITE_REGISTRATIONS_DASHBOARD_URL=''
       - VITE_LEADERBOARDS_DASHBOARD_URL=''
       - VITE_STATISTICS_DASHBOARD_URL=''
-    ports:
+      - VITE_BIRTH='{REGISTRATION_TARGET:45,LATE_REGISTRATION_TARGET:365,FEE:{ON_TIME:0,LATE:0,DELAYED:0}}'
+    ports: 
       - '3001:80'
   dashboards:
     image: opencrvs/ocrvs-dashboards:${VERSION:-latest}
