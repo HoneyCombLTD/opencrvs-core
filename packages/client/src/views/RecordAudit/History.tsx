@@ -266,7 +266,7 @@ export const GetHistory = ({
             id={item?.user?.id as string}
             nameObject={item?.user?.name as (GQLHumanName | null)[]}
             avatar={item.user?.avatar as Avatar}
-            language={window.config.LANGUAGES}
+            language={import.meta.env.VITE_LANGUAGES}
           />
         ) : (
           <Link
@@ -278,7 +278,7 @@ export const GetHistory = ({
               id={item?.user?.id as string}
               nameObject={item?.user?.name as (GQLHumanName | null)[]}
               avatar={item.user?.avatar as Avatar}
-              language={window.config.LANGUAGES}
+              language={import.meta.env.VITE_LANGUAGES}
             />
           </Link>
         )}

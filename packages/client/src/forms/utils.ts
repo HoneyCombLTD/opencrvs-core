@@ -82,7 +82,7 @@ export const VIEW_TYPE = {
 const REGISTRATION_TARGET_DAYS =
   window.config &&
   window.config.BIRTH &&
-  window.config.BIRTH.REGISTRATION_TARGET
+  import.meta.env.VITE_BIRTH_REGISTRATION_TARGET
 
 interface IRange {
   start: number
@@ -379,7 +379,7 @@ export const getFieldOptions = (
       return []
     }
     let partOf: string
-    if (dependencyVal === window.config.COUNTRY.toUpperCase()) {
+    if (dependencyVal === import.meta.env.VITE_COUNTRY.toUpperCase()) {
       partOf = 'Location/0'
     } else {
       partOf = `Location/${dependencyVal}`
@@ -487,7 +487,7 @@ export function isCityLocation(
 }
 
 export function isDefaultCountry(countryCode: string): boolean {
-  return countryCode === window.config.COUNTRY.toUpperCase()
+  return countryCode === import.meta.env.VITE_COUNTRY.toUpperCase()
 }
 
 export function getListOfLocations(

@@ -108,7 +108,7 @@ export function ForgotPIN(props: IForgotPINProps) {
       e.preventDefault()
       logout()
       window.location.assign(
-        window.config.LOGIN_URL + `/forgotten-item?lang=${language}`
+        import.meta.env.VITE_LOGIN_URL + `/forgotten-item?lang=${language}`
       )
     },
     [language, logout]

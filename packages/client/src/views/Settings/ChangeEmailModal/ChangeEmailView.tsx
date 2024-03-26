@@ -77,7 +77,7 @@ export function ChangeEmailView({ show, onSuccess, onClose }: IProps) {
           ],
           notificationEvent,
           userDetails?.mobile
-            ? convertToMSISDN(userDetails?.mobile, window.config.COUNTRY)
+            ? convertToMSISDN(userDetails?.mobile, import.meta.env.VITE_COUNTRY)
             : undefined,
           emailAddress
         )

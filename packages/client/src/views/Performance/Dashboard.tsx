@@ -113,7 +113,7 @@ export const PerformanceDashboard = () => {
   return (
     <DashboardEmbedView
       title={intl.formatMessage(messages.dashboardTitle)}
-      url={window.config.REGISTRATIONS_DASHBOARD_URL}
+      url={import.meta.env.VITE_REGISTRATIONS_DASHBOARD_URL}
       icon={<Icon name="Activity" size="medium" />}
     />
   )

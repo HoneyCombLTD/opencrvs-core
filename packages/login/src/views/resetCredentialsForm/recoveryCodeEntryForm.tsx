@@ -117,7 +117,7 @@ class RecoveryCodeEntryComponent extends React.Component<Props, State> {
     const { forgottenItem } = this.props.location.state
     const { resentAuthenticationCode } = this.state
     const notificationEvent = NotificationEvent.PASSWORD_RESET
-    const notificationMethod = window.config.USER_NOTIFICATION_DELIVERY_METHOD
+    const notificationMethod = import.meta.env.VITE_USER_NOTIFICATION_DELIVERY_METHOD
 
     return (
       <>

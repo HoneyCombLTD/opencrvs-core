@@ -326,7 +326,7 @@ const AdvancedSearchResultComp = (props: IFullProps) => {
                           searchType === BRN_DRN_TEXT ? searchText : '',
                         contactNumber:
                           searchType === PHONE_TEXT
-                            ? convertToMSISDN(searchText, window.config.COUNTRY)
+                            ? convertToMSISDN(searchText, import.meta.env.VITE_COUNTRY)
                             : '',
                         name: searchType === NAME_TEXT ? searchText : '',
                         declarationLocationId: userDetails

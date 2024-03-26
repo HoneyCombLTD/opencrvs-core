@@ -20,7 +20,7 @@ export const PerformanceStatistics = () => {
   return (
     <DashboardEmbedView
       title={intl.formatMessage(messages.statisticTitle)}
-      url={window.config.STATISTICS_DASHBOARD_URL}
+      url={import.meta.env.VITE_STATISTICS_DASHBOARD_URL}
       icon={<Icon name="Activity" size="medium" />}
     />
   )

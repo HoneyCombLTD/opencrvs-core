@@ -60,7 +60,7 @@ export function ChangeNumberView({ show, onSuccess, onClose }: IProps) {
   }
   const continueButtonHandler = async (phoneNumber: string) => {
     const userData = await queriesForUser.fetchUserDetailsByMobile(
-      convertToMSISDN(phoneNumber, window.config.COUNTRY)
+      convertToMSISDN(phoneNumber, import.meta.env.VITE_COUNTRY)
     )
     const mobileNumberExist = userData.data.getUserByMobile
 
@@ -77,7 +77,7 @@ export function ChangeNumberView({ show, onSuccess, onClose }: IProps) {
             }
           ],
           notificationEvent,
-          convertToMSISDN(phoneNumber, window.config.COUNTRY),
+          convertToMSISDN(phoneNumber, import.meta.env.VITE_COUNTRY),
           String(userDetails?.email)
         )
       )

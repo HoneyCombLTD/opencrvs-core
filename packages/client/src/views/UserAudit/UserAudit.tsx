@@ -154,7 +154,7 @@ export const UserAudit = () => {
   const [showResetPasswordError, setShowResetPasswordError] = useState(false)
   const [toggleUsernameReminder, setToggleUsernameReminder] = useState(false)
   const [toggleResetPassword, setToggleResetPassword] = useState(false)
-  const deliveryMethod = window.config.USER_NOTIFICATION_DELIVERY_METHOD
+  const deliveryMethod = import.meta.env.VITE_USER_NOTIFICATION_DELIVERY_METHOD
   const { data, loading, error } = useQuery<
     GetUserQuery,
     GetUserQueryVariables

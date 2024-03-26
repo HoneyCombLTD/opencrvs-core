@@ -20,7 +20,7 @@ export const Leaderboards = () => {
   return (
     <DashboardEmbedView
       title={intl.formatMessage(messages.leaderboardTitle)}
-      url={window.config.LEADERBOARDS_DASHBOARD_URL}
+      url={import.meta.env.VITE_LEADERBOARDS_DASHBOARD_URL}
       icon={<Icon name="Medal" size="medium" />}
     />
   )

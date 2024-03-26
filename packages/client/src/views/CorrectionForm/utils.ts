@@ -410,7 +410,7 @@ export const renderValue = (
 
     if (
       sectionData[camelCase(`countryPrimary ${sectionId}`)] ===
-      window.config.COUNTRY
+      import.meta.env.VITE_COUNTRY
     ) {
       const dynamicOption: IDynamicOptions = {
         resource: 'locations',
@@ -435,7 +435,7 @@ export const renderValue = (
 
     if (
       sectionData[camelCase(`countrySecondary ${sectionId}`)] ===
-      window.config.COUNTRY
+      import.meta.env.VITE_COUNTRY
     ) {
       const dynamicOption: IDynamicOptions = {
         resource: 'locations',

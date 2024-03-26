@@ -66,7 +66,7 @@ export function VerifyCodeView({ show, onSuccess, onClose, data }: IProps) {
       dispatch(
         modifyUserDetails({
           ...userDetails,
-          mobile: convertToMSISDN(phoneNumber, window.config.COUNTRY)
+          mobile: convertToMSISDN(phoneNumber, import.meta.env.VITE_COUNTRY)
         })
       )
     }
@@ -123,7 +123,7 @@ export function VerifyCodeView({ show, onSuccess, onClose, data }: IProps) {
                           userId: userDetails.userMgntUserID,
                           phoneNumber: convertToMSISDN(
                             phoneNumber,
-                            window.config.COUNTRY
+                            import.meta.env.VITE_COUNTRY
                           ),
                           nonce: nonce,
                           verifyCode: verifyCode
@@ -154,7 +154,7 @@ export function VerifyCodeView({ show, onSuccess, onClose, data }: IProps) {
       contentScrollableY={true}
     >
       <Message>
-        {window.config.USER_NOTIFICATION_DELIVERY_METHOD === 'sms'
+        {import.meta.env.VITE_USER_NOTIFICATION_DELIVERY_METHOD === 'sms'
           ? intl.formatMessage(messages.confirmationPhoneMsg, {
               num: phoneNumber || userDetails?.mobile
             })

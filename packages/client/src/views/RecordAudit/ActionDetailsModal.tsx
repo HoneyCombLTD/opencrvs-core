@@ -385,7 +385,7 @@ const ActionDetailsModalListTable = ({
     const name = certificate.collector?.name
       ? getIndividualNameObj(
           certificate.collector.name,
-          window.config.LANGUAGES
+          import.meta.env.VITE_LANGUAGES
         )
       : {}
     const collectorLabel = () => {
@@ -631,7 +631,7 @@ export const ActionDetailsModal = ({
     const nameObj = actionDetailsData?.user?.name
       ? getIndividualNameObj(
           actionDetailsData.user.name,
-          window.config.LANGUAGES
+          import.meta.env.VITE_LANGUAGES
         )
       : null
     userName = nameObj

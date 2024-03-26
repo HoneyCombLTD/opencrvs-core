@@ -767,7 +767,7 @@ export const msisdnTransformer =
       fieldName,
       convertToMSISDN(
         draftData[sectionId][field.name] as string,
-        window.config.COUNTRY
+        import.meta.env.VITE_COUNTRY
       )
     )
 

@@ -273,7 +273,7 @@ function UserListComponent(props: IProps) {
   const searchedLocation: ILocation | undefined = offlineOffices.find(
     ({ id }) => locationId === id
   )
-  const deliveryMethod = window.config.USER_NOTIFICATION_DELIVERY_METHOD
+  const deliveryMethod = import.meta.env.VITE_USER_NOTIFICATION_DELIVERY_METHOD
 
   const getParentLocation = ({ partOf }: ILocation) => {
     const parentLocationId = partOf.split('/')[1]

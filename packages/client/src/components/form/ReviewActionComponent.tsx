@@ -123,7 +123,7 @@ const ACTION_TO_CONTENT_MAP_SKELETON: (
               message: messages.reviewActionDescriptionComplete,
               payload: {
                 deliveryMethod:
-                  window.config.INFORMANT_NOTIFICATION_DELIVERY_METHOD
+                  import.meta.env.VITE_INFORMANT_NOTIFICATION_DELIVERY_METHOD
               }
             },
             modal: {
@@ -148,7 +148,7 @@ const ACTION_TO_CONTENT_MAP_SKELETON: (
                 : messages.reviewActionDescriptionForErrors,
               payload: {
                 deliveryMethod:
-                  window.config.INFORMANT_NOTIFICATION_DELIVERY_METHOD
+                  import.meta.env.VITE_INFORMANT_NOTIFICATION_DELIVERY_METHOD
               }
             },
             modal: {
@@ -322,7 +322,7 @@ class ReviewActionComponent extends React.Component<
       hasErrorsOnFields
     } = this.props
     const ACTION_TO_CONTENT_MAP = ACTION_TO_CONTENT_MAP_SKELETON(
-      window.config.INFORMANT_NOTIFICATION_DELIVERY_METHOD,
+      import.meta.env.VITE_INFORMANT_NOTIFICATION_DELIVERY_METHOD,
       !!hasErrorsOnFields
     )
 

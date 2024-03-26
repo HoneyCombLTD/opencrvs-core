@@ -83,13 +83,13 @@ export const profileReducer: LoopReducer<
                   restUrl === '/'
                     ? `?lang=${getState().i18n.language}`
                     : `?lang=${getState().i18n.language}&redirectTo=${restUrl}`,
-                  window.config.LOGIN_URL
+                  import.meta.env.VITE_LOGIN_URL
                 ).toString()
 
                 window.location.assign(redirectToURL)
               } else {
                 window.location.assign(
-                  `${window.config.LOGIN_URL}?lang=${getState().i18n.language}`
+                  `${import.meta.env.VITE_LOGIN_URL}?lang=${getState().i18n.language}`
                 )
               }
             },

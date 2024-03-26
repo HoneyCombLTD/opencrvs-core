@@ -80,7 +80,7 @@ export class ResetCredentialsSuccessView extends React.Component<
                   color="grey500"
                   id="authenticating-label"
                 >
-                  {window.config.USER_NOTIFICATION_DELIVERY_METHOD === 'sms'
+                  {import.meta.env.VITE_USER_NOTIFICATION_DELIVERY_METHOD === 'sms'
                     ? intl.formatMessage(messages.successPageSubtitlePhone, {
                         forgottenItem
                       })

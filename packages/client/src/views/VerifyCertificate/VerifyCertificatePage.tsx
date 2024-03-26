@@ -365,12 +365,12 @@ export function VerifyCertificatePage() {
 
     const city = location?.address?.city ?? EMPTY_STRING
 
-    if (location?.address?.country === window.config.COUNTRY) {
+    if (location?.address?.country === import.meta.env.VITE_COUNTRY) {
       const district =
-        location.address.district &&
+        location?.address?.district &&
         offlineData.locations[location.address.district].name
       const state =
-        location.address.state &&
+        location?.address?.state &&
         offlineData.locations[location.address.state].name
       return [city, district, state, country]
         .filter((label) => Boolean(label))

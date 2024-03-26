@@ -67,7 +67,7 @@ class PhoneNumberVerificationComponent extends React.Component<Props, State> {
       touched: false,
       error: false,
       errorMessage: '',
-      notificationMethod: window.config.USER_NOTIFICATION_DELIVERY_METHOD
+      notificationMethod: import.meta.env.VITE_USER_NOTIFICATION_DELIVERY_METHOD
     }
   }
 
@@ -118,7 +118,7 @@ class PhoneNumberVerificationComponent extends React.Component<Props, State> {
       const { nonce, securityQuestionKey } = await authApi.verifyUser({
         mobile:
           this.state.notificationMethod === 'sms'
-            ? convertToMSISDN(this.state.phone, window.config.COUNTRY)
+            ? convertToMSISDN(this.state.phone, import.meta.env.VITE_COUNTRY)
             : undefined,
         email:
           this.state.notificationMethod === 'email'

@@ -214,7 +214,7 @@ const getLocation = (
       declaration.data?.marriageEvent?.internationalStatePlaceofmarriage?.toString() ||
       EMPTY_STRING
 
-    if (country && country !== window.config.COUNTRY) {
+    if (country && country !== import.meta.env.VITE_COUNTRY) {
       let location = EMPTY_STRING
       if (internationalDistrict) location = internationalDistrict + ', '
       if (internationalState) location = location + internationalState + ', '
@@ -231,7 +231,7 @@ const getLocation = (
       resources.locations[facility.partOf.split('/')[1]]
     const state = district && resources.locations[district.partOf.split('/')[1]]
     const defaultCountry = intl.formatMessage(
-      countryMessages[window.config.COUNTRY]
+      countryMessages[import.meta.env.VITE_COUNTRY]
     )
     const healthFacility = generateLocationName(facility, intl)
 
@@ -243,7 +243,7 @@ const getLocation = (
     return location
   }
   if (locationType === 'OTHER' || locationType === 'PRIVATE_HOME') {
-    if (country && country !== window.config.COUNTRY) {
+    if (country && country !== import.meta.env.VITE_COUNTRY) {
       let location = EMPTY_STRING
       if (internationalDistrict) location = internationalDistrict + ', '
       if (internationalState) location = location + internationalState + ', '
@@ -260,7 +260,7 @@ const getLocation = (
       declaration.data?.deceased?.countryPrimaryDeceased?.toString() ||
       EMPTY_STRING
 
-    if (countryResidence !== window.config.COUNTRY) {
+    if (countryResidence !== import.meta.env.VITE_COUNTRY) {
       // residence address is other than default country
       const internationalDistrictResidence =
         declaration.data?.deceased?.internationalDistrictPrimaryDeceased?.toString() ||
@@ -301,7 +301,7 @@ const getLocation = (
 export const getFormattedDate = (date: Date) => {
   return formatLongDate(
     date.toLocaleString(),
-    window.config.LANGUAGES,
+    import.meta.env.VITE_LANGUAGES,
     'MMMM dd, yyyy · hh.mm a'
   )
 }

@@ -191,9 +191,9 @@ export function getLocationNameMapOfFacility(
     if (parent === '0') {
       continueLoop = false
       map.country = countryAsString
-        ? (countries.find(({ value }) => value === window.config.COUNTRY)?.label
+        ? (countries.find(({ value }) => value === import.meta.env.VITE_COUNTRY)?.label
             .defaultMessage as string)
-        : (countries.find(({ value }) => value === window.config.COUNTRY)
+        : (countries.find(({ value }) => value === import.meta.env.VITE_COUNTRY)
             ?.label as MessageDescriptor)
     } else {
       location = offlineLocations[parent]

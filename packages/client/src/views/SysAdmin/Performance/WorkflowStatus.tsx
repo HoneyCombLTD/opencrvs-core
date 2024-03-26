@@ -489,7 +489,7 @@ function WorkflowStatusComponent(props: WorkflowStatusProps) {
           const nameIntl = createNamesMap(
             eventProgress && (eventProgress.name as GQLHumanName[])
           )[LANG_EN] as string
-          const localLang = window.config.LANGUAGES.split(',').find(
+          const localLang = import.meta.env.VITE_LANGUAGES.split(',').find(
             (lang: string) => lang !== LANG_EN
           )
           const nameLocal =

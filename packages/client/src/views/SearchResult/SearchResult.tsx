@@ -351,7 +351,7 @@ class SearchResultView extends React.Component<
                           searchType === PHONE_TEXT
                             ? convertToMSISDN(
                                 searchText!,
-                                window.config.COUNTRY
+                                import.meta.env.VITE_COUNTRY
                               )
                             : '',
                         name: searchType === NAME_TEXT ? searchText : '',
@@ -485,7 +485,7 @@ class SearchResultView extends React.Component<
                   searchType === BRN_DRN_TEXT ? searchText : '',
                 contactNumber:
                   searchType === PHONE_TEXT
-                    ? convertToMSISDN(searchText, window.config.COUNTRY)
+                    ? convertToMSISDN(searchText, import.meta.env.VITE_COUNTRY)
                     : '',
                 contactEmail: searchType === EMAIL ? searchText : '',
                 name: searchType === NAME_TEXT ? searchText : ''

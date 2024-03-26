@@ -44,7 +44,7 @@ const getCountryValue = (
   countryCode: string,
   templateData: TemplateTransformerData
 ) => {
-  return countryCode.toUpperCase() === window.config.COUNTRY.toUpperCase()
+  return countryCode.toUpperCase() === import.meta.env.VITE_COUNTRY.toUpperCase()
     ? countryCode
     : getValueFromDeclarationDataByKey(
         templateData.declaration.data,
