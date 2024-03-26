@@ -78,8 +78,8 @@ export const profileReducer: LoopReducer<
             (getState: () => IStoreState) => {
               if (shouldRedirectBack) {
                 const baseUrl = window.location.origin
-                const restUrl = window.location.href.replace(baseUrl, '')
-                const redirectToURL = new URL(import.meta.env.VITE_LOGIN_URL).toString()
+                // const restUrl = window.location.href.replace(baseUrl, '')
+                const redirectToURL = (import.meta.env.VITE_LOGIN_URL).toString()
                 window.location.assign(redirectToURL)
               } else {
                 window.location.assign(
