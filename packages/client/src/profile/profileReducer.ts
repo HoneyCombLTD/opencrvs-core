@@ -80,7 +80,7 @@ export const profileReducer: LoopReducer<
                 const baseUrl = window.location.origin
                 // const restUrl = window.location.href.replace(baseUrl, '')
                 // const redirectToURL = (import.meta.env.VITE_LOGIN_URL).toString()
-                window.location.assign(`${import.meta.env.VITE_LOGIN_URL}`)
+                window.location.assign(`${import.meta.env.VITE_LOGIN_URL}/`)
               } else {
                 window.location.assign(
                   (`${import.meta.env.VITE_LOGIN_URL}?lang=${getState().i18n.language}`).toString()
