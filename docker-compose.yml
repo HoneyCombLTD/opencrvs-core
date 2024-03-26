@@ -61,6 +61,7 @@ services:
       - VITE_CLIENT_APP_URL=http://192.168.0.50:3001
       - VITE_USER_NOTIFICATION_DELIVERY_METHOD='sms' | 'email'
       - VITE_CONFIG_API_URL='http://192.168.0.50:2021'
+      - VITE_API_GATEWAY_URL=http://192.168.0.50:7070/
       - VITE_COUNTRY_CONFIG_URL='http://192.168.0.50:3040'
       - VITE_AVAILABLE_LANGUAGES_SELECT='en:English,fr:Français,bn:বাংলা'
       - VITE_COUNTRY='FAR'
