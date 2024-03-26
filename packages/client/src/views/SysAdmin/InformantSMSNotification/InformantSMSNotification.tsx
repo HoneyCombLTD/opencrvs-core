@@ -251,7 +251,7 @@ const InformantNotification = () => {
           subtitle={intl.formatMessage(messages.informantNotificationSubtitle, {
             communicationType: (
               <strong>
-                {window.config.INFORMANT_NOTIFICATION_DELIVERY_METHOD === 'sms'
+                {import.meta.env.VITE_INFORMANT_NOTIFICATION_DELIVERY_METHOD === 'sms'
                   ? 'SMS'
                   : 'Emails'}
               </strong>
