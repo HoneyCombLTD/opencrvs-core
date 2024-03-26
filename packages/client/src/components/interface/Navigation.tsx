@@ -352,13 +352,13 @@ const NavigationView = (props: IFullProps) => {
   })
   const showRegDashboard =
     !IS_PROD_ENVIRONMENT ||
-    (IS_PROD_ENVIRONMENT && window.config.REGISTRATIONS_DASHBOARD_URL)
+    (IS_PROD_ENVIRONMENT && import.meta.env.VITE_REGISTRATIONS_DASHBOARD_URL)
   const showLeaderboard =
     !IS_PROD_ENVIRONMENT ||
-    (IS_PROD_ENVIRONMENT && window.config.LEADERBOARDS_DASHBOARD_URL)
+    (IS_PROD_ENVIRONMENT && import.meta.env.VITE_LEADERBOARDS_DASHBOARD_URL)
   const showStatistics =
     !IS_PROD_ENVIRONMENT ||
-    (IS_PROD_ENVIRONMENT && window.config.STATISTICS_DASHBOARD_URL)
+    (IS_PROD_ENVIRONMENT && import.meta.env.VITE_STATISTICS_DASHBOARD_URL)
 
   React.useEffect(() => {
     if (!userDetails || !loadWorkqueueStatuses) {
