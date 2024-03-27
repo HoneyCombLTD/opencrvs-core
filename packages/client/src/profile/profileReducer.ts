@@ -78,9 +78,15 @@ export const profileReducer: LoopReducer<
             (getState: () => IStoreState) => {
               if (shouldRedirectBack) {
                 const baseUrl = window.location.origin
-                // const restUrl = window.location.href.replace(baseUrl, '')
-                // const redirectToURL = (import.meta.env.VITE_LOGIN_URL).toString()
-                window.location.assign(`${import.meta.env.VITE_LOGIN_URL}/`)
+                const restUrl = window.location.href.replace(baseUrl, '')
+                const redirectToURL = new URL(
+                  restUrl === '/'
+                    ? `?lang=${getState().i18n.language}`
+                    : `?lang=${getState().i18n.language}&redirectTo=${restUrl}`,
+                  `${import.meta.env.VITE_LOGIN_URL}`
+                ).toString()
+
+                window.location.assign(redirectToURL)
               } else {
                 window.location.assign(
                   (`${import.meta.env.VITE_LOGIN_URL}?lang=${getState().i18n.language}`).toString()
