@@ -33,6 +33,7 @@ services:
       - VITE_COUNTRY='FAR'
       - VITE_USER_NOTIFICATION_DELIVERY_METHOD='sms' | 'email'
       - VITE_LOGIN_URL=http://192.168.0.50:8000
+      - VITE_SIGNATURE_REQUIRED_FOR_ROLES=['LOCAL_REGISTRAR', 'NATIONAL_REGISTRAR']
     ports: 
       - '3001:80'
   dashboards:
