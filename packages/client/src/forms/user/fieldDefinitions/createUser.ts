@@ -225,7 +225,7 @@ export function userSectionFormType(): ISerializedFormSection {
           {
             action: 'hide',
             expression:
-              `!${import.meta.env.VITE_SIGNATURE_REQUIRED_FOR_ROLES}.includes(values.systemRole)`
+              `!['LOCAL_REGISTRAR', 'NATIONAL_REGISTRAR'].includes(values.systemRole)`
           }
         ],
         fields: [
