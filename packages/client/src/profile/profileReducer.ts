@@ -83,13 +83,14 @@ export const profileReducer: LoopReducer<
                   restUrl === '/'
                     ? `?lang=${getState().i18n.language}`
                     : `?lang=${getState().i18n.language}&redirectTo=${restUrl}`,
-                  import.meta.env.VITE_LOGIN_URL
+                  'http://192.168.0.50:8000'
                 ).toString()
 
                 window.location.assign(redirectToURL)
               } else {
-                const url = `${import.meta.env.VITE_LOGIN_URL}?lang=${getState().i18n.language}`
-                window.location.assign(url)
+                window.location.assign(
+                  (`http://192.168.0.50:8000?lang=${getState().i18n.language}`).toString()
+                )
               }
             },
             { args: [Cmd.getState] }
